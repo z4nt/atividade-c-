@@ -1,3 +1,5 @@
+//nome: Antoniel Ferreira Sousa
+//Matricula: 202308424173
 #include <iostream>
 
 using namespace std;
@@ -64,6 +66,25 @@ public:
         }
         cout << endl;
     }
+    void bubblesort(){
+       Node* temp = head;
+       Node* temp2 = head;
+       while (temp != nullptr)
+       {
+           temp = temp->next;
+           while (temp2->next != nullptr)
+           {
+               if(temp2->data > temp2->next->data){
+                   int aux = temp2->data;
+                   temp2->data = temp2->next->data;
+                   temp2->next->data = aux;
+               }
+               temp2 = temp2->next;
+           }
+           temp2 = head;
+       }
+       cout << "a lista foi ordenada" << endl;
+    }
 };
 
 int main() {
@@ -92,6 +113,9 @@ int main() {
     {
         list.removeVarios(m);
     }
+    list.bubblesort();
     list.print();
     return 0;
 }
+ 
+ 
